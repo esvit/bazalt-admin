@@ -1,0 +1,44 @@
+<div class="page-header">
+    <h1>Користувачі</h1>
+</div>
+
+<table ng-table="tableParams" class="table table-hover">
+    <tr ng-repeat="user in users" style="position: relative">
+        <td title="'Пользователи'">
+            <img src="http://cs418724.vk.me/v418724301/8e5/DxP5PVRZ9mU.jpg" class="img-thumbnail pull-left" style="width: 60px; height: 60px; margin: 0 10px 0 0;">
+
+            <div ng-hide="user.is_deleted">
+                <div><strong><a href="/users/{{ user.id }}">{{user.login}}</a></strong></div>
+                <i>{{user.fullname}}</i>
+            </div>
+            <div ng-show="user.is_deleted">
+                <div><strong>{{user.login}}</strong></div>
+                Користувача було видалено.
+            </div>
+        </td>
+        <td title="'Контакты'">
+            <div ng-hide="user.is_deleted">
+                <!--strong>{{user.company}} <small>({{user.citi}})</small></strong><br/-->
+                <div><small>{{user.phone}}</small></div>
+                <small>{{user.email}}</small>
+            </div>
+        </td>
+        <td width="150" title="'Активность'" class="fix-center">
+            <div ng-hide="user.is_deleted">
+                <input bz-switcher="toggleActive(user)" type="checkbox" ng-model="user.is_active" />
+            </div>
+        </td>
+        <td width="120" title="'Действия'" class="fix-center">
+            <div ng-hide="user.is_deleted">
+                <a href="" ng-click="deleteUser(user)" ng-disabled="user.$deleting" class="btn btn-danger btn-small">
+                    <span ng-hide="user.$deleting">Видалити</span>
+                    <span ng-show="user.$deleting">Видалення...</span>
+                </a>
+            </div>
+            <a class="btn btn-link btn-small" ng-disabled="user.$deleting" ng-show="user.is_deleted" href="" ng-click="restoreUser(user)">
+                <span ng-hide="user.$deleting">Скасувати</span>
+                <span ng-show="user.$deleting">Відновлення...</span>
+            </a>
+        </td>
+    </tr>
+</table>

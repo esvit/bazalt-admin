@@ -1,0 +1,36 @@
+{
+  "name": "bazalt-admin",
+  "version": "1.0.0",
+  "homepage": "https://github.com/esvit/bazalt-admin",
+  "authors": [
+    "Vitalii Savchuk <esvit666@gmail.com>"
+  ],
+  "description": "Default admin theme for Bazalt CMS",
+  "main": "index.html",
+  "keywords": [
+    "theme",
+    "cms",
+    "bazalt"
+  ],
+  "license": "New BSD",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.0.0",
+    "bazalt": "*",
+    "font-awesome": "~3.2.1",
+    "requirejs": "~2.1.8",
+    "angular": ">= 1.2.0-rc.2",
+    "angular-animate": "~1.2.0-rc.2",
+    "angular-route": "~1.2.0-rc.2",
+    "angular-cookies": "~1.2.0-rc.2",
+    "angular-route-segment": "https://github.com/esvit/angular-route-segment.git#~1.2.1",
+    "speakingurl": "~0.2.21",
+    "angular-ui-select2": "~0.0.2",
+    "jquery-ui": "~1.10.3",
+    "ng-editable-tree": "*",
+      "ng-finder": "*",
+      "ng-ckeditor": "*",
+    "ng-table": "https://github.com/esvit/ng-table.git#master",
+      "angular-file-upload": "https://github.com/esvit/angular-file-upload.git#master"
+  }
+}

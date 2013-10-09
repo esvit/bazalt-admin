@@ -1,0 +1,101 @@
+@import "../../bower_components/bootstrap/less/bootstrap";
+@import "../../bower_components/font-awesome/less/font-awesome";
+@import "libs/ng-table";
+@import "libs/ng-editable-tree";
+@import "libs/select2";
+@import "libs/ng-finder";
+
+@topBarHeight: 50px;
+@sidebarWidth: 100px;
+
+@import "loader";
+@import "sidebar";
+@import "menu";
+@import "tags";
+@import "uploader";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none;
+
+}
+/*
+::selection {
+  background-color: #f3f3f3;
+  color: #000000;
+}
+::moz-selection {
+  background-color: #f3f3f3;
+  color: #000000;
+}
+
+::webkit-selection {
+  background-color: #f3f3f3;
+  color: #000000;
+}
+*/
+
+/* Base styles */
+html, body, .wrapper, .main-container {
+  height: 100%;
+  min-height: 100%;
+}
+
+.main-container {
+  .make-row();
+  margin: 0 0 0 @sidebarWidth !important;
+  padding-top: @topBarHeight;
+  position: relative;
+}
+
+.navbar.m-header {
+  border-bottom: 1px solid #b2b2b2;
+  height: 50px;
+}
+.content-container {
+  padding: 15px;
+
+  .page-header {
+    margin-top: 0;
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+  }
+}
+
+.btn-group > .btn:hover, .btn-group-vertical > .btn:hover, .btn-group > .btn:focus, .btn-group-vertical > .btn:focus, .btn-group > .btn:active, .btn-group-vertical > .btn:active, .btn-group > .btn.active, .btn-group-vertical > .btn.active {
+  z-index: 0;
+}
+
+.loading-container {
+  //z-index: 999;
+  .loading {
+    &:before, &:after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      min-height: 50px;
+      min-width: 50px;
+    }
+    &:before {
+      background-color: white;
+      opacity: 0.5;
+    }
+    &:after {
+      background-image: url('../img/preloader.gif');
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: 30px;
+      margin-top: -5px;
+    }
+  }
+}
