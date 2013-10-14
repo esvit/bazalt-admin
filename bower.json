@@ -28,9 +28,11 @@
     "angular-ui-select2": "~0.0.2",
     "jquery-ui": "~1.10.3",
     "ng-editable-tree": "*",
-      "ng-finder": "*",
-      "ng-ckeditor": "*",
+    "ng-finder": "*",
+    "ng-ckeditor": "*",
     "ng-table": "https://github.com/esvit/ng-table.git#master",
-      "angular-file-upload": "https://github.com/esvit/angular-file-upload.git#master"
+    "angular-file-upload": "https://github.com/esvit/angular-file-upload.git#master",
+    "flot": "~0.8.1",
+    "bz-switch": "*"
   }
 }

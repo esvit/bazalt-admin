@@ -36,9 +36,12 @@ requirejs.config({
         'ng-editable-tree': '../bower_components/ng-editable-tree/ng-editable-tree',
         'ngTable': '../bower_components/ng-table/ng-table.src',
         'ngFinder': '../bower_components/ng-finder/ng-finder.src',
+        'bz-switch': '../bower_components/bz-switch/bz-switch',
 
         // etc
         'ckeditor': '../bower_components/ckeditor/ckeditor',
+        'jflot': '../bower_components/flot/jquery.flot',
+        'jflot.time': '../bower_components/flot/jquery.flot.time',
         'select2': '../bower_components/select2/select2'
     },
     shim: {
@@ -48,6 +51,7 @@ requirejs.config({
         'angular-animate': { deps: ['angular'] },
         'angular-cookies': { deps: ['angular'] },
         'ngSocial': { deps: ['angular'] },
+        'bz-switch': { deps: ['angular'] },
         'angular-route-segment': { deps: ['angular'] },
         'angular-smoothscroll': { deps: ['angular'] },
         'angular-file-upload': { deps: ['angular'] },
@@ -58,6 +62,8 @@ requirejs.config({
         'ngTable': { deps: ['jquery', 'angular'] },
         'ngFinder': { deps: ['elfinder', 'angular'] },
         'jquery-galleria': { deps: ['jquery'] },
+        'jflot': { deps: ['jquery'] },
+        'jflot.time': { deps: ['jflot'] },
         'elfinder': { deps: ['jquery-ui/jquery.ui.draggable', 'jquery-ui/jquery.ui.droppable', 'jquery-ui/jquery.ui.selectable'] },
 
         // Bootstrap

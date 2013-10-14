@@ -1,9 +1,11 @@
 @import "../../bower_components/bootstrap/less/bootstrap";
+@import "bootstrap-theme";
 @import "../../bower_components/font-awesome/less/font-awesome";
 @import "libs/ng-table";
 @import "libs/ng-editable-tree";
 @import "libs/select2";
 @import "libs/ng-finder";
+@import "libs/bz-switch";
 
 @topBarHeight: 50px;
 @sidebarWidth: 100px;
@@ -35,7 +37,7 @@
 */
 
 /* Base styles */
-html, body, .wrapper, .main-container {
+.wrapper, .main-container {
   height: 100%;
   min-height: 100%;
 }
@@ -80,6 +82,7 @@ html, body, .wrapper, .main-container {
       bottom: 0;
       min-height: 50px;
       min-width: 50px;
+      z-index: 100;
     }
     &:before {
       background-color: white;
@@ -97,5 +100,17 @@ html, body, .wrapper, .main-container {
       margin-left: 30px;
       margin-top: -5px;
     }
+  }
+}
+
+
+.dropdown.dropdown-hover:hover {
+  .dropdown-menu {
+    display: block;
+  }
+  div.dropdown-menu {
+    padding: 5px;
+    margin-top: -5px;
+    width: 350px;
   }
 }

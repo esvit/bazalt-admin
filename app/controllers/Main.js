@@ -5,7 +5,8 @@ define('controllers/Main', [
 ], function(app) {
     'use strict';
 
-    app.controller('Backend.Controllers.Main', ['$scope', '$rootScope', function($scope, $rootScope) {
+    app.controller('Backend.Controllers.Main', ['$scope', '$rootScope', 'bcPages.Factories.Page',
+        function($scope, $rootScope, PageResource) {
         $scope.loginRequest = false;
         /**
          * On 'event:loginRequest' send credentials to the server.

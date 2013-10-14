@@ -20,7 +20,8 @@ define('routes', [
 
             $routeSegmentProvider
                 .segment('main', {
-                    templateUrl: '/views/dashboard.html'
+                    templateUrl: '/views/dashboard.html',
+                    controller: 'Backend.Controllers.Dashboard'
                 })
                 .segment('login', {
                     templateUrl: '/views/login.html',
