@@ -7,6 +7,7 @@ define('files', [
     'controllers/Main',
     'controllers/Dashboard',
     'controllers/SidebarMenu',
+    'controllers/Settings',
     'controllers/Login'
 ], function() {
 });

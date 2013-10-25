@@ -16,6 +16,10 @@ define('routes', [
 
             $routeSegmentProvider
                 .when('/', 'main')
+                .when('/settings', 'settings')
+                .when('/settings/general', 'settings.general')
+                .when('/settings/languages', 'settings.languages')
+                .when('/settings/notifications', 'settings.notifications')
                 .when('/login', 'login');
 
             $routeSegmentProvider
@@ -26,21 +30,51 @@ define('routes', [
                 .segment('login', {
                     templateUrl: '/views/login.html',
                     controller: 'Backend.Controllers.Login'
+                })
+                .segment('settings', {
+                    templateUrl: '/views/settings.html',
+                    controller: 'Backend.Controllers.Settings'
+                })
+                .within()
+                .segment('general', {
+                    templateUrl: '/views/settings/general.html'
+                })
+                .up().within().segment('languages', {
+                    templateUrl: '/views/settings/languages.html'
+                })
+                .up().within().segment('notifications', {
+                    templateUrl: '/views/settings/notifications.html'
                 });
 
             $sceProvider.enabled(false);
         }]);
 
-    app.run(['$rootScope', '$location', '$user', function ($rootScope, $location, $user) {
+    app.run(['$rootScope', '$location', '$user', '$routeSegment', function ($rootScope, $location, $user, $routeSegment) {
         $rootScope.languages = {
-            current: 'en'
+            current: 'en',
+            all: [
+                {
+                    id: 'en',
+                    title: 'English',
+                    ico: 'gb'
+                },
+                {
+                    id: 'ru',
+                    title: 'Русский',
+                    ico: 'ru'
+                }
+            ]
         };
         $rootScope.$on('$routeChangeStart', function (e, next, current) {
             // check user login for route
-            if ((!$user.data || $user.data.is_guest) && next.segment !== 'login') {
-                $location.path('/login');
-            }
+            $user.onLoad(function(user) {
+                if (!$user.data || $user.data.is_guest) {
+                    $location.path('/login');
+                    $rootScope.$broadcast('$user:loginRequired');
+                }
+            });
         });
+        $rootScope.$routeSegment = $routeSegment;
     }]);
 
 });

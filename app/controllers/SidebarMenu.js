@@ -34,6 +34,11 @@ define('controllers/SidebarMenu', [
                 'icon': 'user'
             },
             {
+                'text': 'Sites',
+                'link': '#!/sites',
+                'icon': 'globe'
+            },
+            {
                 'text': 'Files',
                 'link': '#!/files',
                 'icon': 'file'

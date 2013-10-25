@@ -3,9 +3,9 @@
 <head>
     <title>Bazalt CMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/assets/css/theme.css" rel="stylesheet" media="screen">
+    <link href="assets/css/theme.css" rel="stylesheet" media="screen">
 </head>
-<body ng-controller="Backend.Controllers.Main">
+<body ng-controller="Backend.Controllers.Main" ng-keydown="keydown($event)">
 
 <div ng-include="'/views/loginDialog.html'"></div>
 
@@ -17,16 +17,16 @@
     <div class="settings-user">
         <ul class="nav navbar-nav pull-right ng-cloak">
             <li>
-                <a class="btn btn-link" href="#!/settings">
+                <a class="btn btn-link" href="#!/settings/general">
                     <span class="icon-cog"></span>
                     Settings
                 </a>
             </li>
-            <li class="dropdown" ng-show="languages.all.length">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <li class="dropdown" ng-if="languages.all.length">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="">
                     <span ng-repeat="language in languages.all"
                           ng-show="language.id == languages.current">
-                          <span class="ico-flags" ng-class="language.ico"></span>{{language.id}}
+                          <span class="ico-flags" ng-class="language.ico"></span>{{language.title}}
                     </span>
                     <span class="caret"></span>
                 </a>
@@ -39,7 +39,6 @@
                             {{language.title}}
                         </a>
                     </li>
-                    <li class="nav-header">in the near future there will be more languages</li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -64,8 +63,8 @@
     </div>
 </div>
 
-<script src="/bower_components/requirejs/require.js"></script>
-<script src="/bazalt.js"></script>
-<script src="/main.js"></script>
+<script src="bower_components/requirejs/require.js"></script>
+<script src="bazalt.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

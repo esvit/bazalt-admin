@@ -16,7 +16,6 @@
   "private": true,
   "dependencies": {
     "bootstrap": "~3.0.0",
-    "bazalt": "*",
     "font-awesome": "~3.2.1",
     "requirejs": "~2.1.8",
     "angular": ">= 1.2.0-rc.2",
@@ -33,6 +32,7 @@
     "ng-table": "https://github.com/esvit/ng-table.git#master",
     "angular-file-upload": "https://github.com/esvit/angular-file-upload.git#master",
     "flot": "~0.8.1",
-    "bz-switch": "*"
+    "bz-switch": "*",
+    "angular-comment-area": "*"
   }
 }

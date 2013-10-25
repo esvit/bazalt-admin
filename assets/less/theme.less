@@ -16,10 +16,16 @@
 @import "tags";
 @import "uploader";
 
+body {
+  min-height: 100%;
+  height: 100%;
+  position: relative;
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none;
-
 }
+
 /*
 ::selection {
   background-color: #f3f3f3;
@@ -114,3 +120,19 @@
     width: 350px;
   }
 }
+
+
+/** Login **/
+#loginForm {
+  .modal-content {
+    border-radius: 0;
+    .modal-header {
+      background: #428bca;
+      color: white;
+    }
+    .modal-footer {
+      text-align: center;
+    }
+  }
+}
+/**/

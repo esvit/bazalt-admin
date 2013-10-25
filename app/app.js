@@ -10,6 +10,7 @@ define('app', [
     'components/bcPages/backend/module',
     'components/bcMenu/backend/module',
     'components/bcFiles/backend/module',
+    'components/bcSites/backend/module',
     'components/bcUsers/backend/module'
 ], function (angular) {
     'use strict';
@@ -29,6 +30,7 @@ define('app', [
     modules.push('Components.bcMenu.Backend');
     modules.push('Components.bcFiles.Backend');
     modules.push('Components.bcUsers.Backend');
+    modules.push('Components.bcSites.Backend');
 
     return angular.module('app', modules);
 });

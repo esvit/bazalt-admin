@@ -87,11 +87,13 @@ module.exports = (grunt) ->
                 dest: 'build/js/main.min.js'
 
             options:
-                compress: true
-                mangle: true
+                compress: false
+                mangle: false
                 preserveComments: false
+                beautify:
+                    ascii_only: true
                 sourceMappingURL: (fileName) ->
-                    fileName.replace(/^build\//, '')
+                    fileName.replace(/^build\/js\//, '')
                     .replace(/\.js$/, '.map')
                 sourceMap: (fileName) ->
                     fileName.replace(/\.js$/, '.map')
@@ -101,11 +103,11 @@ module.exports = (grunt) ->
                 src: 'build/index.html'
                 overwrite: true
                 replacements: [{
-                    from: /<script src="(.*)\/require.js"><\/script>/gm
+                    from: /<script src="(.*)require.js"><\/script>/gm
                     to: ''
                 }, {
-                    from: '<script src="/main.js"></script>'
-                    to: '<script src="/js/main.min.js"></script>'
+                    from: '<script src="main.js"></script>'
+                    to: '<script src="js/main.min.js"></script>'
                 }]
 
         htmlmin:
@@ -122,7 +124,7 @@ module.exports = (grunt) ->
         ngTemplateCache:
             views:
                 files:
-                    './build/views.js': ['./views/**/*.html', './bazalt/src/**/*.html']
+                    './build/views.js': ['./views/**/*.html', './bazalt/components/**/*.html', './bazalt/modules/**/*.html']
                 options:
                     trim: '.'
                     module: 'app'
@@ -135,8 +137,6 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-watch'
     grunt.loadNpmTasks 'grunt-contrib-connect'
     grunt.loadNpmTasks 'grunt-text-replace'
-    grunt.loadNpmTasks 'grunt-beep'
-
     grunt.loadNpmTasks 'grunt-hustler'
 
     grunt.registerTask 'dev', [

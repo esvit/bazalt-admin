@@ -2,14 +2,14 @@ requirejs.config({
     baseUrl: '/app',
     packages: [{
         name: 'bazalt',
-        location: '../bazalt/src/',
+        location: '../bazalt/',
         main: 'main'
     }, {
         name: 'modules',
-        location: '../bazalt/src/modules'
+        location: '../bazalt/modules'
     }, {
         name: 'components',
-        location: '../bazalt/src/components'
+        location: '../bazalt/components'
     }],
     paths: {
         'requirejs': '../bower_components/requirejs/require',
@@ -36,6 +36,7 @@ requirejs.config({
         'ng-editable-tree': '../bower_components/ng-editable-tree/ng-editable-tree',
         'ngTable': '../bower_components/ng-table/ng-table.src',
         'ngFinder': '../bower_components/ng-finder/ng-finder.src',
+        'bzCommentArea': '../bower_components/angular-comment-area/bz-comment-area.src',
         'bz-switch': '../bower_components/bz-switch/bz-switch',
 
         // etc
@@ -60,6 +61,7 @@ requirejs.config({
         'ng-ckeditor': { deps: ['ckeditor'] },
         'ng-editable-tree': { deps: ['angular', 'jquery-ui/jquery.ui.draggable', 'jquery-ui/jquery.ui.droppable', 'jquery-ui/jquery.ui.sortable'] },
         'ngTable': { deps: ['jquery', 'angular'] },
+        'bzCommentArea': { deps: ['jquery', 'angular'] },
         'ngFinder': { deps: ['elfinder', 'angular'] },
         'jquery-galleria': { deps: ['jquery'] },
         'jflot': { deps: ['jquery'] },

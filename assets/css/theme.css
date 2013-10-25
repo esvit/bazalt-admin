@@ -5947,7 +5947,7 @@ td.visible-print {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
   border-color: #e0e0e0;
-  text-shadow: 0 1px 0 #fff !important;
+  text-shadow: 0 1px 0 #fff;
   border-color: #ccc;
 }
 .btn-default:active,
@@ -10735,7 +10735,7 @@ embed.elfinder-quicklook-preview-audio {
   /*overflow-x: hidden;
   overflow-y: auto;*/
 
-  z-index: 1040;
+  z-index: 1030;
   border-right: 1px solid #b2b2b2;
   /*.nav > li.dropdown-list > .dropdown-menu {
     position: relative;
@@ -11356,6 +11356,11 @@ embed.elfinder-quicklook-preview-audio {
 .uploaded-files .one-file .file-description form .control-group .controls input {
   margin-bottom: 0;
 }
+body {
+  min-height: 100%;
+  height: 100%;
+  position: relative;
+}
 [ng\:cloak],
 [ng-cloak],
 [data-ng-cloak],
@@ -11476,3 +11481,15 @@ embed.elfinder-quicklook-preview-audio {
   margin-top: -5px;
   width: 350px;
 }
+/** Login **/
+#loginForm .modal-content {
+  border-radius: 0;
+}
+#loginForm .modal-content .modal-header {
+  background: #428bca;
+  color: white;
+}
+#loginForm .modal-content .modal-footer {
+  text-align: center;
+}
+/**/
