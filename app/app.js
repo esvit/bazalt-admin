@@ -1,5 +1,5 @@
 define('app', [
-    'angular', 'angular-animate', 'angular-route', 'angular-route-segment', 'bz-switch',
+    'angular', 'angular-animate', 'angular-route', 'angular-route-segment', 'bz-switch', 'ngTable',
 
     'modules/bzConfig/module',
     'modules/bzLanguage/module',
@@ -15,7 +15,7 @@ define('app', [
 ], function (angular) {
     'use strict';
 
-    var modules = ['ngAnimate', 'ngRoute', 'route-segment', 'view-segment', 'bzSwitch'];
+    var modules = ['ngAnimate', 'ngRoute', 'route-segment', 'view-segment', 'bzSwitch', 'ngTable'];
 
     // modules
     modules.push('bzConfig');

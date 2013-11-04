@@ -31,12 +31,27 @@ define('controllers/SidebarMenu', [
             {
                 'text': 'Users',
                 'link': '#!/users',
-                'icon': 'user'
+                'icon': 'user',
+                'items': [{
+                    'text': 'Users',
+                    'link': '#!/users'
+                },{
+                    'text': 'Gifts',
+                    'link': '#!/users/gifts'
+                },{
+                    'text': 'Messages',
+                    'link': '#!/users/messages'
+                }]
             },
-            {
+            /*{
                 'text': 'Sites',
                 'link': '#!/sites',
                 'icon': 'globe'
+            },*/
+            {
+                'text': 'Gifts',
+                'link': '#!/gifts',
+                'icon': 'gift'
             },
             {
                 'text': 'Files',

@@ -1,67 +1,26 @@
-{{$site}}
-<form ng-submit="saveSettings(settings)" loading-container="loading.settings">
-    <div class="settings-group">
-        <span class="title">Site settings</span>
-        <div class="settings-container">
-            <div class="control-group">
-                <label class="control-label" for="title">Site title:</label>
-                <div class="controls">
-                    <input class="form-control" ng-model="settings.title" value="MistInfo" id="title" type="text" required />
-                    <span class="help-block">Site Title to appear at the top in the administration panel</span>
-                </div>
-            </div>
+<div class="content-container" bz-loading-container="loading">
 
-            <div class="control-group" loading-container="loading.key">
-                <label class="control-label">
-                    Secret key:
-                </label>
-                <div class="controls">
-                    <div class="input-group">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" ng-click="generateNewKey()" type="button" title="Generate new"><span class="icon-refresh"></span></button>
-                        </span>
-                        <input class="form-control" type="text" ng-model="settings.secret_key" value="0be5ca0a-6a3d-daa4-5115-f47afa198463" disabled>
-                    </div>
-                    <span class="help-block">Used for basic security settings site. If someone found the key, in the security it needs to change</span>
-                </div>
-            </div>
-        </div>
+    <div class="page-header">
+        <h1>{{ 'Settings'|translate }}</h1>
     </div>
 
-
-    <div class="settings-group">
-        <span class="title">Language settings</span>
-        <div class="settings-container">
-
-            <div class="control-group">
-                <div class="controls checkbox">
-                    <label class="control-label">
-                        <input type="checkbox" ng-model="settings.is_multilingual" checked="checked">
-                        Multilanguage site
-                    </label>
-                    <span class="help-block">Turn on the "Multilanguage" section, where you can add multiple languages</span>
-                </div>
-            </div>
-        </div>
+    <div ng-if="saved" class="alert alert-success">
+        Saved!
     </div>
 
-    <div class="settings-group">
-        <span class="title">Search engines</span>
-        <div class="settings-container">
-            <div class="control-group">
-                <div class="controls checkbox">
-                    <label class="control-label">
-                        <input ng-model="settings.is_allow_indexing" type="checkbox" checked="checked">
-                        Allow indexing
-                    </label>
-                    <span class="help-block">Allow indexing site search bot</span>
-                </div>
+<form ng-submit="saveSettings($site.options)" loading-container="loading.settings">
+
+    <div class="settings-container">
+        <div class="form-group">
+            <label class="control-label" for="title">Message cost:</label>
+            <div class="controls">
+                <input class="form-control" ng-model="$site.options.message_cost" id="title" type="text" required />
             </div>
         </div>
-    </div>
 
     <div class="form-actions text-center">
         <button class="btn-primary btn">Save settings</button>
-        <button class="btn" type="reset">Reset</button>
     </div>
 </form>
+
+</div>
