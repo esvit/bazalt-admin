@@ -10,7 +10,7 @@ define('routes', [
                 .html5Mode(false)
                 .hashPrefix('!');
 
-            bzConfig.templatePrefix('/bazalt');
+            bzConfig.templatePrefix('');
 
             $routeSegmentProvider.options.autoLoadTemplates = true;
 

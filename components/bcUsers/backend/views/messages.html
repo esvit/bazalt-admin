@@ -1,0 +1,30 @@
+<div class="content-container">
+
+    <div class="page-header">
+        <h1>Сообщения</h1>
+    </div>
+
+    <table ng-table="tableParams" class="table table-hover" bz-loading-container="loading">
+        <tr ng-repeat="user in users" style="position: relative">
+            <td data-title="'User' | translate">
+
+                <div ng-hide="user.is_deleted">
+                    <i><a href="#!/users/messages/{{user.id}}">{{user.message}}</a></i>
+                </div>
+            </td>
+            <td width="200" data-title="'От кого => Кому'" class="text-center">
+                <div>
+                    <strong><a target="_blank" href="/user/{{ user.from.id }}/profile">{{user.from.fullname}}</a></strong>
+                    =>
+                    <strong><a target="_blank" href="/user/{{ user.to.id }}/profile">{{user.to.fullname}}</a></strong>
+                </div>
+            </td>
+            <td width="150" data-title="'Активность'" class="text-center">
+                <div>
+                    <input bz-switch="togglePublished(user)" type="checkbox" ng-model="user.is_moderated"/>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</div>

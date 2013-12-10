@@ -7,39 +7,34 @@ define('controllers/SidebarMenu', [
 
         $scope.items = [
             {
-                'text': $translate('Dashboard'),
-                'link': '#!/',
-                'icon': 'dashboard'
-            },
-            {
-                'text': 'Pages',
+                'text': 'Страницы',
                 'link': '#!/pages',
                 'icon': 'file-alt',
                 'items': [{
-                    'text': 'Pages',
+                    'text': 'Страницы',
                     'link': '#!/pages'
                 },{
-                    'text': 'Categories',
+                    'text': 'Категории',
                     'link': '#!/pages/categories'
                 }]
             },
             {
-                'text': 'Menu',
+                'text': 'Меню',
                 'link': '#!/menu',
                 'icon': 'reorder'
             },
             {
-                'text': 'Users',
+                'text': 'Пользователи',
                 'link': '#!/users',
                 'icon': 'user',
                 'items': [{
-                    'text': 'Users',
+                    'text': 'Пользователи',
                     'link': '#!/users'
                 },{
-                    'text': 'Gifts',
+                    'text': 'Подарки',
                     'link': '#!/users/gifts'
                 },{
-                    'text': 'Messages',
+                    'text': 'Сообщения',
                     'link': '#!/users/messages'
                 }]
             },
@@ -49,12 +44,12 @@ define('controllers/SidebarMenu', [
                 'icon': 'globe'
             },*/
             {
-                'text': 'Gifts',
+                'text': 'Подарки',
                 'link': '#!/gifts',
                 'icon': 'gift'
             },
             {
-                'text': 'Files',
+                'text': 'Файлы',
                 'link': '#!/files',
                 'icon': 'file'
             }

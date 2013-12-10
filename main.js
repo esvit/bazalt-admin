@@ -6,10 +6,10 @@ requirejs.config({
         main: 'main'
     }, {
         name: 'modules',
-        location: '../bazalt/modules'
+        location: '../modules'
     }, {
         name: 'components',
-        location: '../bazalt/components'
+        location: '../components'
     }],
     paths: {
         'requirejs': '../bower_components/requirejs/require',
@@ -40,7 +40,7 @@ requirejs.config({
         'bz-switch': '../bower_components/bz-switch/bz-switch',
 
         // etc
-        'ckeditor': '../bower_components/ckeditor/ckeditor',
+        'ckeditor': '../assets/ckeditor/ckeditor',
         'jflot': '../bower_components/flot/jquery.flot',
         'jflot.time': '../bower_components/flot/jquery.flot.time',
         'select2': '../bower_components/select2/select2'
@@ -58,7 +58,7 @@ requirejs.config({
         'angular-file-upload': { deps: ['angular'] },
         'angular-ui-select2': { deps: ['angular', 'select2'] },
 
-        'ng-ckeditor': { deps: ['ckeditor'] },
+        'ng-ckeditor': { deps: ['angular', 'ckeditor'] },
         'ng-editable-tree': { deps: ['angular', 'jquery-ui/jquery.ui.draggable', 'jquery-ui/jquery.ui.droppable', 'jquery-ui/jquery.ui.sortable'] },
         'ngTable': { deps: ['jquery', 'angular'] },
         'bzCommentArea': { deps: ['jquery', 'angular'] },

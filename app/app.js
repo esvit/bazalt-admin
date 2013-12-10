@@ -6,6 +6,7 @@ define('app', [
     'modules/bzMenu/module',
     'modules/bzLoading/module',
     'modules/bzConfirm/module',
+    'modules/bzUploader/module',
 
     'components/bcPages/backend/module',
     'components/bcMenu/backend/module',
@@ -23,6 +24,7 @@ define('app', [
     modules.push('bzMenu');
     modules.push('bzLoading');
     modules.push('bzConfirm');
+    modules.push('bzUploader');
     //modules.push('bzWidgets');
 
     // components

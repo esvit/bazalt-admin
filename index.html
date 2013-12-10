@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Bazalt CMS</title>
+
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/theme.css" rel="stylesheet" media="screen">
 </head>
@@ -11,7 +13,7 @@
 
 <div ng-if="$user.has('admin.access')" class="navbar navbar-default navbar-fixed-top m-header ng-cloak">
     <a class="pull-left logo" href="/">
-        <span class="navbar-brand">Site</span>
+        <span class="navbar-brand">Шерше ля фам - Панель администратора</span>
     </a>
 
     <div class="settings-user">
@@ -19,7 +21,7 @@
             <li>
                 <a class="btn btn-link" href="#!/settings/general">
                     <span class="icon-cog"></span>
-                    Settings
+                    Настройки
                 </a>
             </li>
             <li class="dropdown" ng-if="languages.all.length">

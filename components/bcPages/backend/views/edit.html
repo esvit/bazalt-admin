@@ -1,0 +1,101 @@
+<div class="content-container">
+
+    <div class="page-header">
+        <h1>
+            Страница
+            <a class="btn btn-link" href="#!/pages">{{ 'назад' }}</a>
+        </h1>
+    </div>
+
+
+    <form name="itemEdit" novalidate ng-submit="saveItem(item)">
+    <div class="row">
+        <div class="col col-sm-9" bz-loading-container="loading.page">
+
+                <div class="form-group" ng-class="{'has-error': itemEdit.title.$dirty && itemEdit.title.$invalid}">
+                    <label class="control-label">Заголовок</label>
+
+                    <div class="controls">
+                        <input class="form-control" type="text" name="title" required ng-model="item.title[languages.current]"/>
+                        <span ng-show="itemEdit.title.$dirty && itemEdit.title.$error.required" class="help-block">Напишите заголовок</span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error': itemEdit.body.$dirty && itemEdit.body.$invalid}">
+                    <label class="control-label">Текст</label>
+
+                    <div class="controls">
+                        <span ng-show="itemEdit.body.$dirty && itemEdit.body.$error.required" class="help-block">Напишите текст</span>
+                        <textarea ckeditor name="body" ng-model="item.body[languages.current]"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Картинки</label>
+
+                    <div class="controls">
+                        <div bz-uploader="'/pages/images'" ng-model="item.images"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Видео</label>
+
+                    <div class="controls">
+
+                        <div ng-form="videoForm" ng-repeat="video in item.videos" class="form-group" ng-class="{'has-error': videoForm.url.$error.url && videoForm.url.$dirty}">
+                            <input class="form-control player" type="text"
+                                   placeholder="Вставьте ссылку на YouTube или Vimeo видео"
+                                   tabindex="{{$index + 1}}"
+                                   name="url"
+                                   required
+                                   ng-change="checkForNameDelete($index)"
+                                   ng-model="video.url"
+                                   bz-video-link
+                                   ng-class="{'last-input': $last}" />
+                            <div class="help-block" ng-if="videoForm.url.$error.url && videoForm.url.$dirty">
+                                Неверная ссылка на видео, должна быть:
+                                <ul>
+                                    <li>http://www.youtube.com/watch?v=TFFt68R3KOg</li>
+                                    <li>http://vimeo.com/78254514</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+        <div class="col col-sm-3">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Публикация</div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label class="control-label">Статус</label>
+
+                        <div class="controls">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default" ng-class="{'active': !item.is_published}">
+                                    <input type="radio" ng-model="item.is_published" name="options" id="option1"
+                                           value=""> Черновик
+                                </label>
+                                <label class="btn btn-default" ng-class="{'active': item.is_published}">
+                                    <input type="radio" ng-model="item.is_published" name="options" value="1"> Опубликовано
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-primary pull-right" type="submit">{{ 'Сохранить' }}</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </form>
+</div>

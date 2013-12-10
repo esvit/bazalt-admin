@@ -18,7 +18,7 @@
     "bootstrap": "~3.0.0",
     "font-awesome": "~3.2.1",
     "requirejs": "~2.1.8",
-    "angular": ">= 1.2.0-rc.2",
+    "angular": "1.2.3",
     "angular-animate": "~1.2.0-rc.2",
     "angular-route": "~1.2.0-rc.2",
     "angular-cookies": "~1.2.0-rc.2",
@@ -33,6 +33,7 @@
     "angular-file-upload": "https://github.com/esvit/angular-file-upload.git#master",
     "flot": "~0.8.1",
     "bz-switch": "*",
-    "angular-comment-area": "*"
+    "angular-comment-area": "*",
+    "bazalt": "*"
   }
 }

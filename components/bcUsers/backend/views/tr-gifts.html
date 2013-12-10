@@ -1,0 +1,35 @@
+<div class="content-container">
+
+    <div class="page-header">
+        <h1>Заказы подарков</h1>
+    </div>
+
+    <table ng-table="tableParams" class="table table-hover" bz-loading-container="loading">
+        <tr ng-repeat="gift in users" style="position: relative">
+            <td data-title="'Заказ' | translate">
+
+                <div ng-hide="user.is_deleted">
+                    <div><strong>#{{gift.item_id}} <a href="#!/gifts/{{ gift.item_id }}">{{gift.title.en}}</a></strong> -
+                        <div ng-if="gift.status == '0'" class="label label-default">в ожидании</div>
+                        <div ng-if="gift.status == '1'" class="label label-primary">обработано</div>
+                        <div ng-if="gift.status == '2'" class="label label-success">доставлено</div>
+                    </div>
+                    {{ gift.price }} грн.
+                </div>
+            </td>
+            <td data-title="'Дата создания' | translate">
+                {{gift.created_at|date:'dd.MM.yyyy HH:mm'}}
+            </td>
+            <td data-title="'Дата последнего обновления' | translate">
+                {{gift.updated_at|date:'dd.MM.yyyy HH:mm'}}
+            </td>
+            <td data-title="'Oт' | translate">
+                <a ng-href="/user/{{gift.from.id}}/profile" target="_blank">{{gift.from.fullname}}</a>
+            </td>
+            <td data-title="'Кому' | translate">
+                <a ng-href="/user/{{gift.to.id}}/profile" target="_blank">{{gift.to.fullname}}</a>
+            </td>
+        </tr>
+    </table>
+
+</div>

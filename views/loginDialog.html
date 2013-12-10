@@ -4,6 +4,9 @@
             <div class="modal-header">
                 <h4 class="modal-title"><span class="icon-user"></span> {{ 'Permission denied'|translate }}</h4>
             </div>
+
+            {{$user}}
+
             <form role="form" ng-submit="login(loginUser)" novalidate class="form-horizontal" name="loginForm">
             <div class="modal-body" bz-loading-container="loading">
                     <div class="form-group" ng-class="{'has-error': loginForm.$dirty && loginForm.nickname.$invalid}">

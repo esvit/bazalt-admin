@@ -1,0 +1,42 @@
+<div class="content-container" bz-loading-container="loading">
+
+    <div class="page-header">
+        <h1>Сообщение
+            <a class="btn btn-link" href="#!/users/messages">{{ 'назад' }}</a></h1>
+    </div>
+
+    <div class="b-gifts-from">
+        <div class="row">
+            <div class="col col-lg-3"><label>{{'Oт'|translate }}</label></div>
+            <div class="col col-lg-9"><a ng-href="/user/{{message.from.id}}/profile" target="_blank">{{message.from.fullname}}</a></div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-3"><label>{{'Для'|translate }}</label></div>
+            <div class="col col-lg-9"><a ng-href="/user/{{message.to.id}}/profile" target="_blank">{{message.to.fullname}}</a></div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-lg-3"><label>{{'Сообщение'|translate }}</label></div>
+            <div class="col col-lg-9">
+                <textarea class="form-control" ng-model="message.message"></textarea>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-lg-3"><label>{{'Перевод'|translate }}</label></div>
+            <div class="col col-lg-9">
+                <textarea class="form-control" ng-model="message.translate"></textarea>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-lg-3"><label>{{'Публикация'|translate }}</label></div>
+            <div class="col col-lg-9">
+                <input bz-switch="toggleActive(user)" type="checkbox" ng-model="message.is_moderated"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col col-lg-9 col-lg-offset-3">
+            <input type="button" data-ng-click="saveMessage(message)" class="btn btn-primary" value="Сохранить"/>
+            </div>
+        </div>
+    </div>
+
+</div>

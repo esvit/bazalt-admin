@@ -58,9 +58,9 @@ module.exports = (grunt) ->
             development:
                 options:
                     port: 8000
-                    base: 'src'
+                    base: '.'
                     middleware: (connect, options) -> [
-                        urlRewrite 'src'
+                        urlRewrite '.'
                         connect.static options.base
                         connect.directory options.base
                     ]
@@ -124,7 +124,7 @@ module.exports = (grunt) ->
         ngTemplateCache:
             views:
                 files:
-                    './build/views.js': ['./views/**/*.html', './bazalt/components/**/*.html', './bazalt/modules/**/*.html']
+                    './build/views.js': ['./views/**/*.html']
                 options:
                     trim: '.'
                     module: 'app'
@@ -140,7 +140,6 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-hustler'
 
     grunt.registerTask 'dev', [
-        'copy:frontend'
         'connect'
         'watch'
     ]

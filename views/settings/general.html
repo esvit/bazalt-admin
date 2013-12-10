@@ -1,25 +1,25 @@
 <div class="content-container" bz-loading-container="loading">
 
     <div class="page-header">
-        <h1>{{ 'Settings'|translate }}</h1>
+        <h1>{{ 'Настройки'|translate }}</h1>
     </div>
 
     <div ng-if="saved" class="alert alert-success">
-        Saved!
+        Сохранено!
     </div>
 
-<form ng-submit="saveSettings($site.options)" loading-container="loading.settings">
+<form ng-submit="saveSettings($site.options)" loading-container="loading.settings" class="form-horizontal">
 
     <div class="settings-container">
         <div class="form-group">
-            <label class="control-label" for="title">Message cost:</label>
-            <div class="controls">
+            <label class="control-label col-lg-3" for="title">Стоимость сообщения:</label>
+            <div class="controls col-lg-9">
                 <input class="form-control" ng-model="$site.options.message_cost" id="title" type="text" required />
             </div>
         </div>
 
     <div class="form-actions text-center">
-        <button class="btn-primary btn">Save settings</button>
+        <button class="btn-primary btn">Сохранить</button>
     </div>
 </form>
 
